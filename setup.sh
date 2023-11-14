@@ -201,6 +201,9 @@ main() {
     vscode)
       check_and_install_vscode
       ;;
+    kubectx)
+      install_brew_pkg "kubectx" "formula"
+      ;;
     tmux)
       install_brew_pkg "tmux" "formula"
       ;;
@@ -233,6 +236,7 @@ main() {
       check_and_install_powerlevel10k
       install_brew_pkg "tmux" "formula"
       install_brew_pkg "neovim" "formula"
+      install_brew_pkg "kubectx" "formula"
       deploy_tmux_config
       deploy_zsh_config
       deploy_neovim_config
