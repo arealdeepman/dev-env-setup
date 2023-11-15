@@ -7,6 +7,14 @@ return {
     options = {
       mode = "tabs",
       separator_style = "slant",
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "Explorer",
+          text_align = "left",
+          separator = true
+        }
+      },
     },
   },
 }
