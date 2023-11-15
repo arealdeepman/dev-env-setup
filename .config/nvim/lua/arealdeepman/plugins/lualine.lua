@@ -9,6 +9,7 @@ return {
     lualine.setup({
       options = {
         theme = lualine_onedark,
+        disabled_filetypes = { "NvimTree", },
       },
     })
   end,
