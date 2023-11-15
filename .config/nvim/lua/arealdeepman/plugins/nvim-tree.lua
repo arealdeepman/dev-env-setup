@@ -15,6 +15,7 @@ return {
     -- change color for arrows in tree to light blue
     vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
     vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+    vim.cmd([[ highlight NvimTreeClosedFolderIcon guifg=#3FC5FF ]])
 
     -- configure nvim-tree
     nvimtree.setup({
