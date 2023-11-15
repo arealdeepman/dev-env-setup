@@ -167,14 +167,17 @@ deploy_zsh_config() {
 
 # Function to deploy neovim configuration
 deploy_neovim_config() {
-  local source_dir="./nvim"
+  local source_dir="./.config/nvim"
   local target_dir="$HOME/.config/nvim"
 
   if [[ -d "$target_dir" ]]; then
     read -p "nvim config exists. Overwrite? (y/N) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-      cp -R "$source_dir" "$target_dir"
+      echo "removing the old config files"
+      rm -rf "$target_dir"
+      echo "copying the new config files"
+      cp -rv "$source_dir" "$target_dir"
       echo "nvim config has been updated."
     else
       echo "Skipping nvim config update."
