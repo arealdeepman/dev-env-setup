@@ -76,6 +76,18 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure bash server
+    lspconfig["dockerls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+    
+    -- configure bash server
+    lspconfig["docker_compose_language_service"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+    
     -- configure golang server
     lspconfig["gopls"].setup({
       capabilities = capabilities,
@@ -145,5 +157,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure yaml server
+    lspconfig["yamlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
   end,
 }
+

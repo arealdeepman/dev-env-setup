@@ -2,8 +2,15 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
+    -- immediate dependencies
     "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-cmdline",
+    -- "hrsh7th/cmp-path", -- source for file system paths
+    "FelipeLema/cmp-async-path", -- source for file system paths, same as cmp-path but async
+    -- lsp server
+    "hrsh7th/cmp-nvim-lsp", -- for autocompletion
+    "neovim/nvim-lspconfig", -- easily configure language servers
+    -- snippets
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
@@ -39,10 +46,10 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        -- { name = "nvim_lsp" }, -- lsp
+        { name = "nvim_lsp" }, -- lsp
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
+        { name = "async-path" }, -- file system paths
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {

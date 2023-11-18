@@ -25,6 +25,7 @@ return {
       },
     })
 
+    -- load telescope extensions
     telescope.load_extension("fzf")
 
     -- set keymaps
